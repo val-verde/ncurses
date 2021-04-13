@@ -1156,6 +1156,9 @@ drv_initacs(TERMINAL_CONTROL_BLOCK * TCB, chtype *real_map, chtype *fake_map)
 }
 
 #define ENSURE_TINFO(sp) (TCBOf(sp)->drv->isTerminfo)
+#ifndef USE_XMC_SUPPORT
+#define USE_XMC_SUPPORT 0
+#endif
 
 NCURSES_EXPORT(void)
 _nc_cookie_init(SCREEN *sp)
